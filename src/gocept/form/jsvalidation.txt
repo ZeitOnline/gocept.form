@@ -78,7 +78,7 @@ string already):
 Rendering the viewlet yields a correct javascript tag. Note that the validators
 are created in an window.onload event handler:
 
->>> print provider.render()
+>>> print(provider.render())
 <script language="javascript">
 // max-length
 connect(window, "onload", function(event) {new gocept.validation.MaxLength('form.first_name', 10, "Too long (max 10)")});

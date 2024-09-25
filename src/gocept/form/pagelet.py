@@ -11,20 +11,21 @@ import zope.interface
 import z3c.template.interfaces
 import zope.component
 
+
+@zope.interface.implementer(z3c.pagelet.interfaces.IPageletForm)
 class Form(z3c.pagelet.browser.BrowserPagelet, z3c.form.form.Form):
         """Pagelet support for z3c.form.form.Form"""
-        zope.interface.implements(z3c.pagelet.interfaces.IPageletForm)
 
         update = z3c.form.form.Form.update
 
+@zope.interface.implementer(z3c.pagelet.interfaces.IPageletAddForm)
 class AddForm(z3c.pagelet.browser.BrowserPagelet, z3c.form.form.AddForm):
         """Pagelet support for z3c.form.form.AddForm"""
-        zope.interface.implements(z3c.pagelet.interfaces.IPageletAddForm)
 
         update = z3c.form.form.AddForm.update
 
+@zope.interface.implementer(z3c.pagelet.interfaces.IPageletEditForm)
 class EditForm(z3c.pagelet.browser.BrowserPagelet, z3c.form.form.EditForm):
         """Pagelet support for z3c.form.form.EditForm"""
-        zope.interface.implements(z3c.pagelet.interfaces.IPageletEditForm)
 
         update = z3c.form.form.EditForm.update

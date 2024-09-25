@@ -3,6 +3,7 @@
 # See also LICENSE.txt
 """Additional actions."""
 
+from base64 import b64encode
 import sys
 import xml.sax.saxutils
 
@@ -82,7 +83,8 @@ def render_confirm_action(self):
 
     """ % dict(
         name=self.__name__,
-        func_name=self.__name__.encode('base64')[:-3],
+        func_name=b64encode(
+            self.__name__.encode('utf-8')).decode('ascii')[:-2],
         message=xml.sax.saxutils.quoteattr(message))
 
     return button + additional
