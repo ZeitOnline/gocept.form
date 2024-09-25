@@ -11,7 +11,7 @@ has to enable it first:
 
 >>> from gocept.form.action import DestructiveAction, render_destructive_action
 >>> action = DestructiveAction("Delete")
->>> print render_destructive_action(action)()
+>>> print(render_destructive_action(action)())
 <input type="submit" id="actions.delete" name="actions.delete" value="Delete" class="button" />
          <script type="text/javascript">
          document.getElementById('actions.delete').disabled = true;

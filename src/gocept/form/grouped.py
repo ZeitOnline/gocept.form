@@ -9,9 +9,8 @@ grouped_form_template = zope.formlib.namedtemplate.NamedTemplateImplementation(
     zope.formlib.interfaces.IPageForm)
 
 
+@zope.interface.implementer(gocept.form.interfaces.IFieldGroup)
 class Fields(object):
-
-    zope.interface.implements(gocept.form.interfaces.IFieldGroup)
 
     # Use slots to make sure that nothing sets anything else on the group.
     __slots__ = ('title', 'fields', 'css_class')
@@ -25,9 +24,8 @@ class Fields(object):
         return self.fields
 
 
+@zope.interface.implementer(gocept.form.interfaces.IRemainingFields)
 class RemainingFields(object):
-
-    zope.interface.implements(gocept.form.interfaces.IRemainingFields)
 
     __slots__ = ('title', 'css_class')
 
@@ -122,6 +120,7 @@ class AddForm(FormBase, zope.formlib.form.AddForm):
         return zope.formlib.form.setUpInputWidgets(
             form_fields, self.prefix, self.context, self.request,
             ignore_request=ignore_request)
+
 
 class EditForm(FormBase, zope.formlib.form.EditForm):
     """Edit form base."""

@@ -59,7 +59,7 @@ Instanciate the add form:
 
 And render it:
 
->>> print form.render()
+>>> print(form.render())
 <html>
     ...
     <fieldset class="class-a">

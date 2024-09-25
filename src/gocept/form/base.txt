@@ -17,9 +17,9 @@ To get started we define a simple schema:
 ...
 
 >>> import zope.app.container.contained
->>> class Pizza(zope.app.container.contained.Contained):
-...     zope.interface.implements(IPizza)
-...
+>>> @zope.interface.implementer(IPizza)
+... class Pizza(zope.app.container.contained.Contained):
+...     pass
 
 >>> import zope.app.container.sample
 >>> class PizzaContainer(zope.app.container.sample.SampleContainer):
@@ -108,7 +108,7 @@ Define an editform with our base class
 ...         self.notified = message
 ...
 >>> editform = EditPizza(pizza, request)
->>> print editform.render()
+>>> print(editform.render())
 <html>
   ...
     <table class="form-fields">
@@ -125,7 +125,7 @@ If we don't want to redirect to the parent and there is no view set to redirect 
 and no new interface is given, nextURL returns none.
 
 >>> editform.redirect_to_parent_after_edit = False
->>> print editform.nextURL()
+>>> print(editform.nextURL())
 None
 
 Redirect to a view after edit.
@@ -150,10 +150,9 @@ To test this we need an adapter which can adapt a pizza.
 ...
 
 >>> import zope.component
->>> class Foo(object):
-...
-...     zope.interface.implements(IFoo)
-...     zope.component.adapts(IPizza)
+>>> @zope.component.adapter(IPizza)
+... @zope.interface.implementer(IFoo)
+... class Foo(object):
 ...
 ...     def __init__(self, context):
 ...         self.context = context
