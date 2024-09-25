@@ -1,4 +1,3 @@
-# -*- coding: latin-1 -*-
 # Copyright (c) 2007-2008 gocept gmbh & co. kg
 # See also LICENSE.txt
 """Tools for schema field constraints."""
@@ -10,4 +9,4 @@ def _all(list):
 
 
 def all(*constraints):
-    return lambda value:_all([c(value) for c in constraints])
+    return lambda value: _all([c(value) for c in constraints])

@@ -50,11 +50,11 @@ class ValidationViewlet(zope.viewlet.viewlet.ViewletBase):
 def max_length_validator(field, request):
     """validate the maximum length is not overridden"""
     if not field.max_length:
-        return
+        return None
     zc.resourcelibrary.need('gocept.form.jsvalidation')
     message = _("Too long (max ${max_length})",
-               mapping=dict(max_length=field.max_length))
-    return '''new gocept.validation.MaxLength('form.%s', %d, %s)'''  % (
+                mapping=dict(max_length=field.max_length))
+    return '''new gocept.validation.MaxLength('form.%s', %d, %s)''' % (
         field.__name__, field.max_length,
         xml.sax.saxutils.quoteattr(
             zope.i18n.translate(message, context=request)))

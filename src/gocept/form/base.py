@@ -3,6 +3,7 @@
 
 import zope.app.container.interfaces
 
+
 def apply_data_with_setattr(context, form_fields, data, adapters=None):
     """Applies data of a form to an object using setattr. Allows to adapt
     form fields to given interfaces."""
@@ -13,8 +14,6 @@ def apply_data_with_setattr(context, form_fields, data, adapters=None):
     changed = False
 
     for form_field in form_fields:
-        field = form_field.field
-
         name = form_field.__name__
         newvalue = data.get(name, form_field)  # using form_field as marker
         if newvalue is form_field:
@@ -69,7 +68,6 @@ class Add(object):
         return object.__class__.__name__
 
 
-
 class Edit(object):
 
     redirect_to_parent_after_edit = True
@@ -90,8 +88,8 @@ class Edit(object):
 
     def nextURL(self):
         if (not self.redirect_to_parent_after_edit
-            and not self.redirect_to_view
-            and not self.new_context_interface):
+                and not self.redirect_to_view
+                and not self.new_context_interface):
             return None
 
         new_context = self.new_context()
