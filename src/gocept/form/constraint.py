@@ -1,7 +1,6 @@
 # -*- coding: latin-1 -*-
 # Copyright (c) 2007-2008 gocept gmbh & co. kg
 # See also LICENSE.txt
-# $Id$
 """Tools for schema field constraints."""
 
 
