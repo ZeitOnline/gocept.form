@@ -12,6 +12,7 @@ import zope.i18nmessageid
 import zope.formlib.form
 import zope.formlib.namedtemplate
 
+
 class DestructiveAction(zope.formlib.form.Action):
     pass
 
@@ -32,9 +33,10 @@ def render_destructive_action(self):
 
         <label>
             <input
-            type="checkbox" 
-            id="%s" 
-            onChange="document.getElementById('%s').disabled = !this.checked"/> Unlock &quot;%s&quot; button</label>
+            type="checkbox"
+            id="%s"
+            onChange="document.getElementById('%s').disabled = !this.checked"/>
+        Unlock &quot;%s&quot; button</label>
 
     """ % (self.__name__, self.__name__ + '.unlock', self.__name__, self.label)
     # XXX: the label should be translated.
@@ -81,7 +83,7 @@ def render_confirm_action(self):
             document.getElementById("%(name)s").onclick = confirm_%(func_name)s;
         </script>
 
-    """ % dict(
+    """ % dict(  # noqa
         name=self.__name__,
         func_name=b64encode(
             self.__name__.encode('utf-8')).decode('ascii')[:-2],
@@ -112,4 +114,3 @@ class confirm(object):
                                success=success, **self.options)
         self.actions.append(action)
         return action
-
