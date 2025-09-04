@@ -1,9 +1,9 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 
 
 setup(
     name = 'gocept.form',
-    version='0.8.0+py3',
+    version='0.8.0+py3.1',
     author = "Christian Zagrodnick",
     author_email = "cz@gocept.com",
     description = "Extensions for zope.formlib",
@@ -13,15 +13,10 @@ setup(
     license = "ZPL 2.1",
     url='http://pypi.python.org/pypi/gocept.form',
 
-    packages = find_packages('src'),
-    package_dir = {'': 'src'},
-
     include_package_data = True,
     zip_safe = False,
 
-    namespace_packages = ['gocept'],
     install_requires = [
-        'setuptools',
         'gocept.mochikit>=1.4.2.5.dev0',
         'zope.interface',
         'zope.component',
