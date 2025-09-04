@@ -52,7 +52,6 @@ def test_suite():
         'confirm-action.txt',
         'destructive-action.txt',
         'grouped.txt',
-        'jsvalidation.txt',
         'multiple-constraints.txt'
     ))
     return suite

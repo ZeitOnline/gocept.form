@@ -17,12 +17,10 @@ setup(
     zip_safe = False,
 
     install_requires = [
-        'gocept.mochikit>=1.4.2.5.dev0',
         'zope.interface',
         'zope.component',
         'zope.contentprovider',
         'zope.viewlet',
-        'zc.resourcelibrary',
     ],
     extras_require = dict(
         test=[
