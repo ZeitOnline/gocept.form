@@ -6,6 +6,8 @@ Changes
 
 - Make Python-3 compatible.
 
+- Replace pkg_resources with pep420 namespace package.
+
 
 0.8.0 (2016-01-12)
 ------------------
