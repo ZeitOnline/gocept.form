@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name = 'gocept.form',
-    version='0.9.0',
+    version='0.10.0.dev0',
     author = "Christian Zagrodnick",
     author_email = "cz@gocept.com",
     description = "Extensions for zope.formlib",
