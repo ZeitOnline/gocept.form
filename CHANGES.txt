@@ -1,8 +1,8 @@
 Changes
 =======
 
-0.9 (unreleased)
-----------------
+0.9.0 (2025-10-24)
+------------------
 
 - Make Python-3 compatible.
 
